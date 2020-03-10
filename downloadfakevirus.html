@@ -5,6 +5,52 @@
     <title>Download fake virus</title>
   </head>
   <body>
+    <script>
+var vbsContents = `
+X=MsgBox("Unable to open Prince of Persia. What do you want to do?",2+16,"Prince of Persia")
+
+X=MsgBox("A fatal error occured. Restart computer?",4+16,"Error")
+
+X=MsgBox("Unable to connect to the Internet. Troubleshoot?",1+64,"Internet Explorer")
+
+X=MsgBox("A website has requested a file download. Do you want to download it?",4+32,"File Download")
+
+X=MsgBox("File successfully downloaded.",0+64,"Download Success")
+
+X=MsgBox("A critical error has been detected. Do you want to fix it?",4+16,"Error")
+
+X=MsgBox("Deleting folder System32...",1+48,"Warning")
+
+X=MsgBox("Successfully deleted.",0+64,"Deletion Success")
+
+X=MsgBox("110101010110101011101010001010100101010101011101010111110",0+16,"110101010100101011101")
+
+X=MsgBox("hahaha this was just a prank get rekt noob. I will now open your DVD drive.",0+64,"you're a noob")
+
+Set oWMP = CreateObject("WMPlayer.OCX.7")
+Set colCDROMS = oWMP.cdromCollection
+do
+if colCDROMS.Count >= 1 then
+colCDROMS.Item(i).Eject
+For i = 0 to colCDROMS.Count - 1
+colCDROMS.Item(i).Eject
+Next
+End If
+loop`;
+function download()
+{
+    var element = document.createElement("a");
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(vbsContents));
+    element.setAttribute('download', "Prince of Persia.vbs");
+    
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    
+    element.click();
+    
+    document.body.removeChild(element);
+}
+    </script>
     Download it by clicking <a href="javascript:downloadfile();">here...</a>
   </body>
 </html>
