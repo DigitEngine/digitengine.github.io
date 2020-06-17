@@ -7,7 +7,8 @@
 		<canvas id="cvs" width="640" height="480" style="border:1px solid #000;"></canvas>
 		<canvas id="picker" width="640" height="480" style="border:1px solid #000;"></canvas><br />
 		<input id="name" type="text" value="" />
-		<button onclick="downloadScreen();">Download Test Screen</button>
+		<button onclick="downloadScreen();">Download Test Screen</button><br />
+		<input id="tset" type="file" oninput="uploadTileset();" />
 		<script>
 var screens = new Array(24*24);
 
@@ -1167,6 +1168,10 @@ function downloadScreen()
 	var arrayWU = arrayContents.substring(9, arrayContents.split('').length);
 	var array = "int screen[20*15] = { " + arrayWU + " };";
 	download(document.getElementById("name").value + ".h", array);
+}
+function uploadTileset()
+{
+	tileset.src = document.getElementById("tset").value;
 }
 var anim = function()
 {
